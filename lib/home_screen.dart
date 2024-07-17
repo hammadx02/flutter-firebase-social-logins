@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Social Logins',
+              'Social Logins 👨‍💻',
               style: GoogleFonts.roboto(
                 textStyle: const TextStyle(
                   fontSize: 24,
@@ -32,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 30,
             ),
             MyButton(
-              title: 'Sign In with Facebook',
+              title: 'Log In with Facebook',
               bgColor: const Color(0XFF1877F2),
               icon: 'assets/images/fb.png',
               onTap: () {},
@@ -41,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20,
             ),
             MyButton(
-              title: 'Sign In with Google',
+              title: 'Log In with Google',
               bgColor: Colors.white,
               icon: 'assets/images/google.png',
               titleColor: Colors.black.withOpacity(0.54),
@@ -51,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20,
             ),
             MyButton(
-              title: 'Sign In with Apple',
+              title: 'Log In with Apple',
               bgColor: Colors.black,
               icon: 'assets/images/apple.png',
               onTap: () {},
@@ -60,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20,
             ),
             MyButton(
-              title: 'Sign In with Twitter',
+              title: 'Log In with Twitter',
               bgColor: const Color(0XFF1D9BF0),
               icon: 'assets/images/twitter.png',
               onTap: () {},
