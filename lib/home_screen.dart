@@ -31,42 +31,61 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 30,
             ),
-            InkWell(
-              onTap: () {},
-              child: Container(
-                height: 54,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: const Color(0XFF1877F2),
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.084),
-                      blurRadius: 3,
-                      spreadRadius: 0,
-                      offset: const Offset(0, 0),
-                    ),
-                  ],
-                ),
-                child: ListTile(
-                  leading: Image.asset(
-                    'assets/images/fb.png',
-                    scale: 3.3,
-                  ),
-                  title: Text(
-                    'Sign In with Facebook',
-                    style: GoogleFonts.inter(
-                      textStyle: const TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+            MyButton(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MyButton extends StatelessWidget {
+  final String title;
+  final Color bgColor;
+  final String icon;
+  void Function() onTap;
+  MyButton({
+    super.key,
+    required this.title,
+    required this.bgColor,
+    required this.icon,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        height: 54,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: const Color(0XFF1877F2),
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.084),
+              blurRadius: 3,
+              spreadRadius: 0,
+              offset: const Offset(0, 0),
             ),
           ],
+        ),
+        child: ListTile(
+          leading: Image.asset(
+            'assets/images/fb.png',
+            scale: 3.3,
+          ),
+          title: Text(
+            'Sign In with Facebook',
+            style: GoogleFonts.inter(
+              textStyle: const TextStyle(
+                fontSize: 18,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
         ),
       ),
     );
