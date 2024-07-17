@@ -31,7 +31,40 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 30,
             ),
-            MyButton(),
+            MyButton(
+              title: 'Sign In with Facebook',
+              bgColor: const Color(0XFF1877F2),
+              icon: 'assets/images/fb.png',
+              onTap: () {},
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            MyButton(
+              title: 'Sign In with Google',
+              bgColor: Colors.white,
+              icon: 'assets/images/google.png',
+              titleColor: Colors.black.withOpacity(0.54),
+              onTap: () {},
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            MyButton(
+              title: 'Sign In with Apple',
+              bgColor: Colors.black,
+              icon: 'assets/images/apple.png',
+              onTap: () {},
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            MyButton(
+              title: 'Sign In with Twitter',
+              bgColor: const Color(0XFF1D9BF0),
+              icon: 'assets/images/twitter.png',
+              onTap: () {},
+            ),
           ],
         ),
       ),
@@ -42,6 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
 class MyButton extends StatelessWidget {
   final String title;
   final Color bgColor;
+  final Color? titleColor;
   final String icon;
   void Function() onTap;
   MyButton({
@@ -50,6 +84,7 @@ class MyButton extends StatelessWidget {
     required this.bgColor,
     required this.icon,
     required this.onTap,
+    this.titleColor,
   });
 
   @override
@@ -60,7 +95,7 @@ class MyButton extends StatelessWidget {
         height: 54,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: const Color(0XFF1877F2),
+          color: bgColor,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
@@ -72,17 +107,20 @@ class MyButton extends StatelessWidget {
           ],
         ),
         child: ListTile(
-          leading: Image.asset(
-            'assets/images/fb.png',
-            scale: 3.3,
+          leading: SizedBox(
+            height: 22,
+            width: 22,
+            child: Image.asset(
+              icon,
+            ),
           ),
           title: Text(
-            'Sign In with Facebook',
+            title,
             style: GoogleFonts.inter(
-              textStyle: const TextStyle(
+              textStyle: TextStyle(
                 fontSize: 18,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+                color: titleColor ?? Colors.white,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),
