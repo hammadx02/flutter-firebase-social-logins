@@ -15,22 +15,27 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Text(
+          'Social Logins 👨‍💻',
+          style: GoogleFonts.roboto(
+            textStyle: const TextStyle(
+              fontSize: 22,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              'Social Logins 👨‍💻',
-              style: GoogleFonts.roboto(
-                textStyle: const TextStyle(
-                  fontSize: 24,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
             const SizedBox(
               height: 30,
             ),
@@ -123,7 +128,7 @@ class MyButton extends StatelessWidget {
               textStyle: TextStyle(
                 fontSize: 18,
                 color: titleColor ?? Colors.white,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),
