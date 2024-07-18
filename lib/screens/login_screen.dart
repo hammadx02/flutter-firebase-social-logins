@@ -53,6 +53,8 @@ class LoginScreen extends StatelessWidget {
               titleColor: Colors.black.withOpacity(0.54),
               onTap: () async {
                 await authService.signInWithGoogle();
+                // ignore: use_build_context_synchronously
+                Navigator.pushReplacementNamed(context, '/HomeScreen');
               },
             ),
             const SizedBox(
