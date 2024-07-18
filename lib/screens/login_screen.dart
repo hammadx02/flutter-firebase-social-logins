@@ -54,7 +54,10 @@ class LoginScreen extends StatelessWidget {
               onTap: () async {
                 await authService.signInWithGoogle();
                 // ignore: use_build_context_synchronously
-                Navigator.pushReplacementNamed(context, '/HomeScreen');
+                // Navigator.pushReplacementNamed(context, '/HomeScreen');
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Logged in with Google')),
+                );
               },
             ),
             const SizedBox(
