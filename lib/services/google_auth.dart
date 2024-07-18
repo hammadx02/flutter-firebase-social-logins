@@ -21,3 +21,4 @@ class GoogleAuth {
     return null;
   }
 }
+

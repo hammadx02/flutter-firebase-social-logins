@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget {
               height: 30,
             ),
             MyButton(
-              title: 'Log In with Facebook',
+              title: 'Sign In with Facebook',
               bgColor: const Color(0XFF1877F2),
               icon: 'assets/images/fb.png',
               onTap: () {},
@@ -47,7 +47,7 @@ class LoginScreen extends StatelessWidget {
               height: 20,
             ),
             MyButton(
-              title: 'Log In with Google',
+              title: 'Sign In with Google',
               bgColor: Colors.white,
               icon: 'assets/images/google.png',
               titleColor: Colors.black.withOpacity(0.54),
@@ -64,7 +64,7 @@ class LoginScreen extends StatelessWidget {
               height: 20,
             ),
             MyButton(
-              title: 'Log In with Apple',
+              title: 'Sign In with Apple',
               bgColor: Colors.black,
               icon: 'assets/images/apple.png',
               onTap: () {},
@@ -73,7 +73,7 @@ class LoginScreen extends StatelessWidget {
               height: 20,
             ),
             MyButton(
-              title: 'Log In with Twitter',
+              title: 'Sign In with Twitter',
               bgColor: const Color(0XFF1D9BF0),
               icon: 'assets/images/twitter.png',
               onTap: () {},
