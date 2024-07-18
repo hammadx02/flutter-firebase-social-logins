@@ -2,15 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:social_logins/services/auth_service.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginScreen extends StatelessWidget {
+   LoginScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
+  final AuthService authService = AuthService();
 
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
               bgColor: Colors.white,
               icon: 'assets/images/google.png',
               titleColor: Colors.black.withOpacity(0.54),
-              onTap: () {},
+              onTap: () async {
+                await authService.signInWithGoogle();
+              },
             ),
             const SizedBox(
               height: 20,
