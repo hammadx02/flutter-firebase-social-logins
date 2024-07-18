@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:social_logins/login_screen.dart';
 
 void main() {
+  WidgetsBinding;
   runApp(const MyApp());
 }
 
