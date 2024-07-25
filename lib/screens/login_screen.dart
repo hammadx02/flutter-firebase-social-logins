@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:social_logins/services/facebook_auth.dart';
 import 'package:social_logins/services/google_auth.dart';
 
 class LoginScreen extends StatelessWidget {
-  // final AuthService authService = AuthService();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +34,7 @@ class LoginScreen extends StatelessWidget {
               bgColor: const Color(0XFF1877F2),
               icon: 'assets/images/fb.png',
               onTap: () {
-                signInWithFacebook();
+                // signInWithFacebook();
               },
             ),
             const SizedBox(height: 20),
@@ -47,8 +44,7 @@ class LoginScreen extends StatelessWidget {
               icon: 'assets/images/google.png',
               titleColor: Colors.black.withOpacity(0.54),
               onTap: () async {
-                //  User? user = await authService.
-               signInWithGoogle();
+                signInWithGoogle();
               },
             ),
             const SizedBox(height: 20),
