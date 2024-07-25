@@ -36,7 +36,14 @@ class LoginScreen extends StatelessWidget {
               bgColor: const Color(0XFF1877F2),
               icon: 'assets/images/fb.png',
               onTap: () async {
-                signInWithFacebook();
+                try {
+                  await signInWithFacebook();
+                }
+                catch(e) {
+                  print("Error during Facebook sign-in: $e");
+
+                }
+                
                 // Navigator.pushReplacement(
                 //   context,
                 //   MaterialPageRoute(
