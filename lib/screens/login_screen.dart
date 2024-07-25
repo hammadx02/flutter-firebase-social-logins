@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:social_logins/services/auth_service.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:social_logins/services/facebook_auth.dart';
+import 'package:social_logins/services/google_auth.dart';
 
 class LoginScreen extends StatelessWidget {
-  final AuthService authService = AuthService();
+  // final AuthService authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
               bgColor: const Color(0XFF1877F2),
               icon: 'assets/images/fb.png',
               onTap: () {
-                // Implement Facebook sign-in logic
+                signInWithFacebook();
               },
             ),
             const SizedBox(height: 20),
@@ -47,18 +47,8 @@ class LoginScreen extends StatelessWidget {
               icon: 'assets/images/google.png',
               titleColor: Colors.black.withOpacity(0.54),
               onTap: () async {
-                User? user = await authService.signInWithGoogle();
-                if (user != null) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Logged in as ${user.displayName ?? 'User'}')),
-                  );
-                  // Navigate to home screen or another screen
-                  // Navigator.pushReplacementNamed(context, '/HomeScreen');
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Failed to log in with Google')),
-                  );
-                }
+                //  User? user = await authService.
+               signInWithGoogle();
               },
             ),
             const SizedBox(height: 20),
@@ -66,18 +56,14 @@ class LoginScreen extends StatelessWidget {
               title: 'Log In with Apple',
               bgColor: Colors.black,
               icon: 'assets/images/apple.png',
-              onTap: () {
-                // Implement Apple sign-in logic
-              },
+              onTap: () {},
             ),
             const SizedBox(height: 20),
             MyButton(
               title: 'Log In with Twitter',
               bgColor: const Color(0XFF1D9BF0),
               icon: 'assets/images/twitter.png',
-              onTap: () {
-                // Implement Twitter sign-in logic
-              },
+              onTap: () {},
             ),
           ],
         ),
