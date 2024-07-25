@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_logins/services/google_auth.dart';
 
+import '../services/facebook_auth.dart';
+
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -33,8 +35,14 @@ class LoginScreen extends StatelessWidget {
               title: 'Log In with Facebook',
               bgColor: const Color(0XFF1877F2),
               icon: 'assets/images/fb.png',
-              onTap: () {
-                // signInWithFacebook();
+              onTap: () async {
+                signInWithFacebook();
+                // Navigator.pushReplacement(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => HomeScreen(),
+                //   ),
+                // );
               },
             ),
             const SizedBox(height: 20),
@@ -45,6 +53,12 @@ class LoginScreen extends StatelessWidget {
               titleColor: Colors.black.withOpacity(0.54),
               onTap: () async {
                 signInWithGoogle();
+                // Navigator.pushReplacement(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => HomeScreen(),
+                //   ),
+                // );
               },
             ),
             const SizedBox(height: 20),
